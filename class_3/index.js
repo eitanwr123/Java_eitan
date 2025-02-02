@@ -24,7 +24,7 @@ if (isWorking === true) {
 }
 
 //if the car is type 'mazda' and color 'red' and model 'cx5' - print "Yes i found my Car!"
-//otherwise print "I dont need this Car!"
+//otherwise print "I dont need this Car!"g
 
 console.log("Ex 3")
 
