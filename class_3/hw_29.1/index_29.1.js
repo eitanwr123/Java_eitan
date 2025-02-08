@@ -184,3 +184,4 @@ while (true) {
 numsAvg = sum / count
 console.log(`The avg is: ${numsAvg}`);
 
+
