@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income & VAT Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <form id="vatForm">
+                <div id="formContainer" class="container"
+                    style="display: flex;align-items: center;flex-direction: column;margin-top: 40px;">
+                    <div>
+                        <label for="income">Income:</label>
+                        <input type="number" id="income" name="income" required>
+                    </div>
+                    <div>
+                        <label for="vat">VAT %:</label>
+                        <input type="number" id="vat" name="vat" required>
+                    </div>
+                    <div>
+                        <label for="taxDeduction">Tax deduction:</label>
+                        <input type="number" id="taxDeduction" name="taxDeduction" required>
+                    </div>
+                    <div>
+                        <label for="comment">comment:</label>
+                        <input type="text" id="comment" name="comment" required>
+                    </div>
+
+                    <div>
+                        <label for="month"> month</label>
+                        <input id="month" type="month" name="month" />
+                    </div>
+                    <button type="submit">Save</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <div id="tableData" class="container" style="margin-top: 50px;">
+            <table class="table">
+                <thead>
+                    <tr id="tableHeaders">
+
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
