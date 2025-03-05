@@ -61,13 +61,15 @@ function loadTable() {
         for (let i = 0; i < dataArray.length; i++) {
             const formObj = dataArray[i];
             const tr = document.createElement("tr")
+            tr.id = `${formObj.productName}`
             for (let j = 0; j < headers.length; j++) {
                 const tdValue = formObj[headers[j]];
                 let td = document.createElement("td")
                 td.innerHTML += tdValue
                 tr.append(td)
-
             }
+            const tdButton = getTdButton()
+            tr.append(tdButton)
             Tbody.append(tr)
         }
 
@@ -86,15 +88,51 @@ function cleanTable() {
 
 }
 
+//delete product from local storage
 function deleteProduct(id) {
+    let dataArray = JSON.parse(localStorage.getItem("formDataArray"))
+    dataArray = dataArray.filter((product) => {
+        return product.productName !== id;
+    });
+
+    console.log(dataArray)
+    localStorage.setItem("formDataArray", JSON.stringify(dataArray))
+    loadTable()
+
+
 
 }
 
+//this function is taken from the "cars-app" that we did in class
+function getTdButton() {
+    const button = document.createElement("button")
+    button.classList.add("btn", "btn-danger")
+
+    const icon = `<i class="bi bi-trash3"></i>`
+    button.innerHTML = icon
+
+    button.onclick = function () {
+        // console.log(this.parentElement.parentElement.remove())
+        deleteProduct(this.parentElement.parentElement.id)
+    }
+    const tdButton = document.createElement("td")
+    tdButton.append(button)
+    return tdButton
+}
+
+//create a td/th and enter the value into its content,this function was taken from "cars-app" that we did in class
 function getTD(value, defaultValue = "", type = "td") {
     const currentTD = document.createElement(type)
     currentTD.innerHTML = value || defaultValue
     return currentTD
 }
+
+
+
+
+
+
+
 
 
 init()
