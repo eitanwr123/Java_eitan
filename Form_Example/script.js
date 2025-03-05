@@ -58,11 +58,11 @@ function getFormattedDateTime() {
 }
 
 function loadTable() {
-    cleanTable()
 
     const dataArray = JSON.parse(localStorage.getItem("formDataArray"))
     if (!Array.isArray(dataArray)) return; // validate that arrayOfCars is array
     if (dataArray.length === 0) return; // validate that there is data inside the array
+    cleanTable()
     const headers = Object.keys(dataArray[0]) //extract an array with all the keys
     console.log(headers);
     const theadTr = document.getElementById("tableHeaders")
