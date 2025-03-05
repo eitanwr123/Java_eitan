@@ -3,7 +3,7 @@ function init() {
 
 }
 
-//form
+//form functionality
 document.getElementById("productsForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
 
@@ -34,12 +34,12 @@ document.getElementById("productsForm").addEventListener("submit", function (eve
 
 });
 
-
+//loading the table
 function loadTable() {
 
     const dataArray = JSON.parse(localStorage.getItem("formDataArray"))
     if (!Array.isArray(dataArray)) return; // validate that arrayOfCars is array
-    if (dataArray.length === 0) return; // validate that there is data inside the array
+    if (dataArray.length === 0) return cleanTable(); // validate that there is data inside the array
     cleanTable()
     const headers = Object.keys(dataArray[0]) //extract an array with all the keys
     console.log(headers);
@@ -128,15 +128,8 @@ function getTD(value, defaultValue = "", type = "td") {
 }
 
 
-
-
-
-
-
-
-
 init()
 
 
 
-
+//action items- fix it so it will show the img , work on styling and validation
