@@ -71,7 +71,7 @@ function addCardToFav(movie) {
       });
       return
     } else {
-      Swal.fire({
+      Swal.fire({             
         icon: "error",
         title: "Already added",
         text: "Time to try diffrent moivies",
